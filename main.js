@@ -376,9 +376,9 @@ function mensajesAleatorio(){
 function eliminarNota(id){
   const notasHechas = descargarLS("notas") || [];
   let pos = notasHechas.findIndex(el => el.id === id);
-  let usuario = notasHechas[pos].usuario;
+  let usuario = notasHechas[pos].usuario.toLowerCase();
 
-  let usuarioSS = sessionStorage.getItem("Usuario").slice(1,-1); 
+  let usuarioSS = sessionStorage.getItem("Usuario").slice(1,-1).toLowerCase(); 
     if((usuarioSS == "admin") || (usuario == usuarioSS) ){
     
     style.innerHTML+=`.swa2-popup {
@@ -484,6 +484,7 @@ function imagenAleatoria(){
 }
 
 //Funciones complementarias de Canvas + Mousetrap
+
 function canvasMinimze(){
   document.getElementById("offcanvasExample").className = "offcanvas offcanvas-start hiding";
     const offcanvasExample = document.getElementById('offcanvasExample');
@@ -534,6 +535,7 @@ function minimzarCanvasTop(){
     offcanvasTop.classList.remove("hiding"); 
     
   }, 500);
+
   eliminarBackdrop()
   const body = document.getElementById("body"); 
   body.removeAttribute("style");
