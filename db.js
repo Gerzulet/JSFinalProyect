@@ -259,7 +259,7 @@ let pagPrincipal = ` <div id="pagPrincipal" class="container  ">
     
 
     <br><br> 
-    Mira el repositorio en este <a href="https://github.com/Gerzulet/JSFinalProyect.github.io"> link!. <a/>. 
+    Mira el repositorio en este <a href="https://github.com/Gerzulet/JSFinalProyect.github.io" target="_blank"> link!. <a/>. 
 
     </section> 
   </div>
