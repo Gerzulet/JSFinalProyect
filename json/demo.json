@@ -1,8 +1,9 @@
 [
+    {"id" : "0", "nombre": "Sobre este proyecto", "usuario": "German", "fecha": "3/9/2022", "importancia": "Alta", "info":"Hola, espero que te haya gustado este proyecto, ciertas funciones son algo limitadas o dependientes de una base de datos, a medida que aprenda, esta podria ser una aplicacion completamente desarollada."},
     {"id" : "0", "nombre": "Apuntes Clase Fisica", "usuario": "Alejandro", "fecha": "1/9/2022", "importancia": "Alta", "info":"Gente, subi al drive los apuntes, no se olviden de mirarlos"},
      {"id" : "0", "nombre": "Sobre la tarea de hoy", "usuario": "Vanina", "fecha": "1/9/2022", "importancia": "Media", "info":"Buen dia, alguien tiene la resolucion de la tarea que hicimos hoy en clase?"},
+     {"id" : "0", "nombre": "Clases de Ingles", "usuario": "Marianna", "fecha": "3/9/2022", "importancia": "Alta", "info":"Buenas tardes! No se olviden de practicar Ingles, es una requerimiento importante a la hora de programar!. No quiero escuchar la palabra 'Value' mal pronunciada!!"},
      {"id" : "0", "nombre": "Inscripcion cursos React", "usuario": "Pedro", "fecha": "2/9/2022", "importancia": "Media", "info":"Alguien se inscribe a los cursos de React? Avisenme por Whatsapp por fa!"},
-     {"id" : "0", "nombre": "Clase grabada de hoy dia", "usuario": "German", "fecha": "3/9/2022", "importancia": "Alta", "info":"Gente, la clase grabada de hoy la subí a youtube, este es el link https://www.youtube.com/watch?v=dQw4w9WgXcQ "}, 
-     {"id" : "0", "nombre": "Sobre este proyecto", "usuario": "German", "fecha": "3/9/2022", "importancia": "Alta", "info":"Hola, espero que te haya gustado este proyecto, ciertas funciones son algo limitadas o dependientes de una base de datos, a medida que aprenda, esta podria ser una aplicacion completamente desarollada."}
+     {"id" : "0", "nombre": "Clase grabada de hoy dia", "usuario": "German", "fecha": "3/9/2022", "importancia": "Alta", "info":"Gente, la clase grabada de hoy la subí a youtube, este es el link https://www.youtube.com/watch?v=dQw4w9WgXcQ "}
     
   ]
