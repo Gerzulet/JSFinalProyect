@@ -258,6 +258,9 @@ let pagPrincipal = ` <div id="pagPrincipal" class="container  ">
     Es posible que los atajos presenten conflictos con los del navegador, es sugerible mirar la configuracion del navegador.
     
 
+    <br><br> 
+    Mira el repositorio en este <a href="https://github.com/Gerzulet/JSFinalProyect.github.io"> link!. <a/>. 
+
     </section> 
   </div>
 </div>
