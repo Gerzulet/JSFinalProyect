@@ -41,6 +41,7 @@ class note {
 }
 
 log();
+demo();
 
 
 
@@ -207,7 +208,6 @@ despues de estos tenemos que buscar un boton flotante para llamar a la funcion
 
 
 */
-demo();
 
 function demo(){
   const notasActuales = descargarLS("notas");
@@ -215,14 +215,14 @@ function demo(){
   const notasDEMO = descargarLS("notasDEMO"); 
   let i = 0;
   notasDEMO.forEach(element => {
-    element.id = notasActuales.length + i;
+    element.id = notasActuales.length ;
     i++;
     notasActuales.push(element)
   });
 
   if (estadoActual === 0){
     cargarLS("notas", notasActuales);
-    renderizarNotas()
+    
   }
   
   
@@ -237,7 +237,7 @@ function agregarNotas(){
   let usuario = descargarSS("Usuario")
   var today = new Date();
   const id = notasHechas.length;
-  var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+  var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+ today.getFullYear();
   
   
   const nota = new note(id,tituloNota,usuario,date,importanciaNota,notaTextArea); 
@@ -273,7 +273,7 @@ function renderizarNotas(){
     <div class="col-2  text-light text-center">
       ${nota.importancia}
     </div>
-    <div class="col-1  mb-2 mx-4 text-light text-center">
+    <div class="col-1  mb-2  text-light text-center">
       <a  onclick="eliminarNota(${nota.id}) "href="#"><img class="bandera" src="./Images/trash.svg" alt=""></a>
     </div>
   `

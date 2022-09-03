@@ -27,11 +27,12 @@ Mousetrap.bind('alt+a', function() {
      
 });
 
-Mousetrap.bind('ctrl+space', function() { canvasNotas();  });
+Mousetrap.bind('ctrl+space', function(e) { 
+    e.preventDefault();
+    canvasNotas();  });
 Mousetrap.bind('esc', function() { 
     minimizarAgregarNotas(); 
     canvasMinimze()
     minimzarCanvasTop()
-    _saveDraft();
     return false; });
 
