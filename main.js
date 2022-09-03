@@ -296,19 +296,33 @@ function inputNoValido(){
   }, 2000);
 }
 
- function mensajesAleatorio(){
-  const array = ["Hola,almacenaré tus notas aca.","Mira los atajos con ALT + A","Casilla de Notas","Hola, como estas? Dejame ayudarte.",  "Distintos usuarios, distintas notas",  "Mira las notas que los demas dejaron."]
-
-   
-  const randomIndex = Math.floor(Math.random() * array.length);
-   const item = array[randomIndex];
-   
-     return item;
-
+function fetchingaStorage(){
+  const arrayDatos=[];
+  fetch("/mensajes.JSON")
+  .then ((respuesta) => respuesta.json())
+  .then ((data) => {
+    if(typeof(data) === "string"){data = JSON.parse(data)}
+    else
+    data.forEach(function(item){
+      
+      arrayDatos.push(item.mensaje);
+           });
   
+  cargarLS("mensajes", arrayDatos);         
+  });
 }
 
+fetchingaStorage();
 
+
+
+function mensajesAleatorio(){
+  const array = descargarLS("mensajes"); 
+  const randomIndex = Math.floor(Math.random() * array.length);
+  const item = array[randomIndex];
+
+    return item;
+}
 
 function eliminarNota(id){
   const notasHechas = descargarLS("notas") || [];
@@ -318,6 +332,7 @@ function eliminarNota(id){
   cargarLS("notas", notasHechas);
   renderizarNotas();
 }
+
 
 
 function enDesarollo(){
@@ -492,14 +507,22 @@ function enviarForm(){
       <textarea style="height:300px;width:400px; font-size: 15px; " class="form__field mt-2" name="message"></textarea>
       </label>
       <br>
-      <button  type="submit" class=" btn btn-dark my-4">Enviar</button>
+      <button  id="formSubmit" type="submit" class=" btn btn-dark my-4">Enviar</button>
 
     </form>
     </div>`,
     
   })
   
+  
+   document.getElementById("formSubmit").addEventListener("click", function(event){
+     event.preventDefault()
+     Swal.fire('Enviado!')
+    
+   });
 }
+
+
 
 function toast(){
 
