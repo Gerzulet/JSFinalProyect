@@ -23,7 +23,7 @@ Mousetrap.bind('ctrl+enter', function() {
 });
 Mousetrap.bind('alt+a', function() {
     
-    mostrarInfo();
+    mostrarAtajos();
      
 });
 
