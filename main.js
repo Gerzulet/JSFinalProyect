@@ -15,7 +15,6 @@
 
 
 
-
 const style = document.createElement("style"); 
 const body = document.getElementsByTagName("body")[0];
 style.innerHTML = `${animacionesDB} `; 
@@ -377,10 +376,76 @@ function mensajesAleatorio(){
 function eliminarNota(id){
   const notasHechas = descargarLS("notas") || [];
   let pos = notasHechas.findIndex(el => el.id === id);
+  let usuario = notasHechas[pos].usuario;
 
-  notasHechas.splice(pos, 1);
-  cargarLS("notas", notasHechas);
-  renderizarNotas();
+  let usuarioSS = sessionStorage.getItem("Usuario").slice(1,-1); 
+    if((usuarioSS == "admin") || (usuario == usuarioSS) ){
+    
+    style.innerHTML+=`.swa2-popup {
+      background-color:black;
+      border: 3px solid white;
+    }
+    .swal2-modal {
+      background-color:black;
+      border: 3px solid white;
+    }
+    .swal2-show{
+      background-color:black;
+      border: 3px solid white;
+    }
+
+
+  `
+
+
+    Swal.fire({
+      title: '¿Estas seguro de eliminar esta nota?',
+      imageUrl: "./Images/cateyes.gif",
+      imageWidth: 150,
+      imageHeight: 150,
+      showCancelButton: true,
+      confirmButtonColor: '#1e1c10',
+      cancelButtonColor: '#1e1c10',
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        notasHechas.splice(pos, 1);
+        cargarLS("notas", notasHechas);
+        renderizarNotas();
+
+        
+        
+      }
+    })
+  } else {
+    style.innerHTML+=`.swa2-popup {
+      background-color:black;
+      border: 3px solid white;
+    }
+    .swal2-modal {
+      background-color:black;
+      border: 3px solid white;
+    }
+    .swal2-show{
+      background-color:black;
+      border: 3px solid white;
+    }
+
+
+  `
+    Swal.fire({
+      title: 'No puedes eliminar las notas de otros usuarios!',
+      imageUrl: "./Images/gatomirando.png",
+      imageWidth: 250,
+      imageHeight: 250,
+     
+
+    })
+  }
+
 }
 
 

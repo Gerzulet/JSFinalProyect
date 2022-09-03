@@ -247,12 +247,13 @@ let pagPrincipal = ` <div id="pagPrincipal" class="container  ">
   <div class="offcanvas-body">
     <section class="text-light"> 
     Programa para crear notas localmente, funcional con varios usuarios. 
-    Se añade uso de API de formspree. 
+    
     <br> <br> 
     **Usar con navegador maximizado.
-    Actualmente esta pagina no admite su uso en dispositivos tales como tablets o celulares (en desarollo).
+    Actualmente esta pagina no admite su uso en dispositivos tales como tablets o celulares.
+
     <br> <br> 
-    
+    Puedes eliminar las otras notas ingresando con el nombre de "admin".
     
 
     </section> 
