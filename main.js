@@ -577,8 +577,6 @@ function mostrarAtajos(){
       ` ALT + ESC --> SALIR DE PROGRAMA <br>
       CTRL + 'ENTER' --> AGREGAR NOTA (DESPUES DE ABRIR MODULO)<br> 
       ALT + 'A' --> ATAJOS DE TECLADO <br> 
-      CTRL + 'T' --> TRASHCAN (EN DESARROLLO) <br>
-      ALT + SHIFT + Q --> SHOP (EN DESARROLLO) <br>
       ESC --> PARA CERRAR MODULOS
       `,
     focusConfirm: false,
