@@ -331,7 +331,7 @@ function inputNoValido(){
 
 function fetchingaStorage(){
   const arrayDatos=[];
-  fetch("/mensajes.JSON")
+  fetch("/mensajes.json")
   .then ((respuesta) => respuesta.json())
   .then ((data) => {
     if(typeof(data) === "string"){data = JSON.parse(data)}
@@ -347,7 +347,7 @@ function fetchingaStorage(){
 
 function fetchingNotasaStorage(){
   const arrayDatos=[];
-  fetch("/demo.JSON")
+  fetch("/demo.json")
   .then ((respuesta) => respuesta.json())
   .then ((data) => {
     if(typeof(data) === "string"){data = JSON.parse(data)}
