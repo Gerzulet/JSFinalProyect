@@ -27,14 +27,8 @@ Mousetrap.bind('alt+a', function() {
      
 });
 
-Mousetrap.bind('ctrl+space', function(e) { 
-    if (e.preventDefault) {
-        e.preventDefault();
-    } else {
-        // internet explorer
-        e.returnValue = false;
-    }
-    _saveDraft();
+Mousetrap.bind('ctrl+space', function() { 
+   
     canvasNotas();  });
 Mousetrap.bind('esc', function() { 
     minimizarAgregarNotas(); 
