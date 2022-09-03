@@ -578,6 +578,7 @@ function mostrarAtajos(){
       CTRL + 'ENTER' --> AGREGAR NOTA (DESPUES DE ABRIR MODULO)<br> 
       ALT + 'A' --> ATAJOS DE TECLADO <br> 
       ESC --> PARA CERRAR MODULOS
+      ALT + Q --> SHOP (EN DESAROLLO)
       `,
     focusConfirm: false,
     confirmButtonText:

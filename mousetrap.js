@@ -36,3 +36,6 @@ Mousetrap.bind('esc', function() {
     minimzarCanvasTop()
     return false; });
 
+    Mousetrap.bind('alt+q', function() { 
+   
+        enDesarollo();  });
