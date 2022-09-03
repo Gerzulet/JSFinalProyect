@@ -1,18 +1,3 @@
-//USAR API DE FORMSPREE 
-// SACAR EL BOYTON DE BASURERO Y CAMBIARLO POR EL DE LA API
-//ENTREGAR PROYECTO DE APIS 
-
-//CERAR FUNCION BUSCAR QUE TENGA UN BOTON FLOTANTE 
-//VER TEMA DE ACCESOS 
-//CAMBIAR INFORMACION 
-//MIENTRAS CREAR OTRO CANVAS PARA MOSTRAR LOS ATAJOS 
-// CREAR ATAJO PARA BUSQUEDA 
-//PROBRAR QUE FUNCION BIEN MOUSTRAP EN VARIOS NAVEGADORES 
-//CREAR DEMO 
-//PROBAR HACERLO RESPONSIVE 
-//SACAR TIENDA Y PONER MEJOR EL BOTON PARA ATAJOS 
-// CREAR FUNCINO PARA PERMITIR A USUARIOS ELIMINAR SUS NOTAS 
-
 
 
 const style = document.createElement("style"); 
@@ -182,7 +167,7 @@ function main(nombre){
       style.innerHTML = "";
       body.innerHTML= pagPrincipal;
       const title = document.getElementById("title");
-      title.innerHTML = `  <h2 class="titulo my-4">Bienvenido ${nombre}</h2>`
+      title.innerHTML = `  <h2 class="titulo my-4">Hola, ${nombre}</h2>`
       
       renderizarNotas();
 
@@ -211,7 +196,7 @@ despues de estos tenemos que buscar un boton flotante para llamar a la funcion
 
 function demo(){
   const notasActuales = descargarLS("notas");
-  let estadoActual = notasActuales.length;
+  let cantidadNotasPresentes = notasActuales.length;
   const notasDEMO = descargarLS("notasDEMO"); 
   let i = 0;
   notasDEMO.forEach(element => {
@@ -220,7 +205,7 @@ function demo(){
     notasActuales.push(element)
   });
 
-  if (estadoActual === 0){
+  if (cantidadNotasPresentes === 0){
     cargarLS("notas", notasActuales);
     
   }
@@ -228,6 +213,8 @@ function demo(){
   
 
 }
+
+
 function agregarNotas(){
   const notasHechas = descargarLS("notas") || [];
   const tituloNota = document.getElementById("tituloNota").value || "Sin Titulo"; 
@@ -250,7 +237,7 @@ function agregarNotas(){
   document.getElementById("tituloNota").value = "";
   document.getElementById("importanciaNota").value ="";
   document.getElementById("notaTextArea").value = "";
-  minimizarAgregarNotas()
+  minimizarAgregarNotas() // Funcion para cerrar canvas
 
 }
 
@@ -329,7 +316,7 @@ function inputNoValido(){
   }, 2000);
 }
 
-function fetchingaStorage(){
+function fetchingaStorage(){ // Cargando mensajes para ser utilizados por funcion mensajesAleatorio()
   const arrayDatos=[];
   fetch("json/mensajes.json")
   .then ((respuesta) => respuesta.json())
@@ -345,7 +332,7 @@ function fetchingaStorage(){
   });
 }
 
-function fetchingNotasaStorage(){
+function fetchingNotasaStorage(){ // funcion para traer notas para ser utilizadas como ejemplos
   const arrayDatos=[];
   fetch("./json/demo.json")
   .then ((respuesta) => respuesta.json())
@@ -555,6 +542,8 @@ function minimzarCanvasTop(){
 
 }
 
+// Funciones relacionadas a librerias 
+
 function mostrarAtajos(){
   style.innerHTML+=`.swa2-popup {
     background-color:black;
@@ -640,9 +629,7 @@ function enviarForm(){
 
 
 
-function toast(){
 
-}
 function minimizarAgregarNotas(){
     const offcanvasBottom = document.getElementById('offcanvasBottom');
     offcanvasBottom.className = "offcanvas offcanvas-bottom hiding";
