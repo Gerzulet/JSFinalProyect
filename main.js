@@ -347,7 +347,7 @@ function fetchingaStorage(){
 
 function fetchingNotasaStorage(){
   const arrayDatos=[];
-  fetch("json/demo.json")
+  fetch("./json/demo.json")
   .then ((respuesta) => respuesta.json())
   .then ((data) => {
     if(typeof(data) === "string"){data = JSON.parse(data)}
