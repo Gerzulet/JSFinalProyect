@@ -1,0 +1,7 @@
+[
+    {"id" : "0", "nombre": "Apuntes Clase Fisica", "usuario": "Alejandro", "fecha": "04/09/2022", "importancia": "Alta", "info":"Gente, subi al drive los apuntes, no se olviden de mirarlos"},
+     {"id" : "0", "nombre": "Sobre la tarea de hoy", "usuario": "Vanina", "fecha": "04/09/2022", "importancia": "Media", "info":"Buen dia, alguien tiene la resolucion de la tarea que hicimos hoy en clase?"},
+     {"id" : "0", "nombre": "Inscripcion cursos React", "usuario": "Pedro", "fecha": "05/09/2022", "importancia": "Media", "info":"Alguien se inscribe a los cursos de React? Avisenme por Whatsapp por fa!"},
+     {"id" : "0", "nombre": "Clase grabada de hoy dia", "usuario": "German", "fecha": "06/09/2022", "importancia": "Alta", "info":"Gente, la clase grabada de hoy a youtube, este es el link https://www.youtube.com/watch?v=dQw4w9WgXcQ "}
+    
+  ]

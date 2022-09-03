@@ -159,6 +159,7 @@ function logout(){
     }
    `;
   }, 900);
+
   cargarSS("Usuario", nombre);
 
 
@@ -182,6 +183,7 @@ function main(nombre){
       body.innerHTML= pagPrincipal;
       const title = document.getElementById("title");
       title.innerHTML = `  <h2 class="titulo my-4">Bienvenido ${nombre}</h2>`
+      
       renderizarNotas();
 
        setInterval(() => {
@@ -194,7 +196,39 @@ function main(nombre){
   
 }
 
+// Nuestra funcion hasta ahora con respecto a los ID toma en cuenta el largo del array de notas ya hechas
+/* 
+usamos el metodo map para modificar los ids 
+consoleamos 
+una vez tenemos nuestro array, agarramos lo que ya tenemos en local, le agregamos este nuevo array y lo volvemos a subir al local storage 
+siendo asi, ya se renderiza 
+de ahi en adelante ya podemos ocupar todas nuestras funciones 
 
+despues de estos tenemos que buscar un boton flotante para llamar a la funcion 
+
+
+*/
+demo();
+
+function demo(){
+  const notasActuales = descargarLS("notas");
+  let estadoActual = notasActuales.length;
+  const notasDEMO = descargarLS("notasDEMO"); 
+  let i = 0;
+  notasDEMO.forEach(element => {
+    element.id = notasActuales.length + i;
+    i++;
+    notasActuales.push(element)
+  });
+
+  if (estadoActual === 0){
+    cargarLS("notas", notasActuales);
+    renderizarNotas()
+  }
+  
+  
+
+}
 function agregarNotas(){
   const notasHechas = descargarLS("notas") || [];
   const tituloNota = document.getElementById("tituloNota").value || "Sin Titulo"; 
@@ -312,8 +346,24 @@ function fetchingaStorage(){
   });
 }
 
-fetchingaStorage();
+function fetchingNotasaStorage(){
+  const arrayDatos=[];
+  fetch("/demo.JSON")
+  .then ((respuesta) => respuesta.json())
+  .then ((data) => {
+    if(typeof(data) === "string"){data = JSON.parse(data)}
+    else
+    data.forEach(function(item){
+      
+      arrayDatos.push(item);
+           });
+  
+  cargarLS("notasDEMO", arrayDatos);         
+  });
+}
 
+fetchingaStorage();
+fetchingNotasaStorage();
 
 
 function mensajesAleatorio(){

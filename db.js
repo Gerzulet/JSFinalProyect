@@ -251,6 +251,8 @@ let pagPrincipal = ` <div id="pagPrincipal" class="container  ">
     <br> <br> 
     **Usar con navegador maximizado.
     Actualmente esta pagina no admite su uso en dispositivos tales como tablets o celulares (en desarollo).
+    <br> <br> 
+    
     
 
     </section> 
